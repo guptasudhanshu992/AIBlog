@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p><small>Published on: {{ post.created_at|date:"F j, Y" }}</small></p>
+    <div>
+        {{ post.content|linebreaksbr }}
+    </div>
+    <hr>
+    <h2>Comments</h2>
+    {% for comment in post.comments.all %}
+        <div>
+            <p><strong>{{ comment.author }}</strong> <small>({{ comment.created_at|date:"F j, Y, P" }})</small></p>
+            <p>{{ comment.text|linebreaksbr }}</p>
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+    <hr>
+    <a href="{% url 'blog:post_list' %}">Back to post list</a>
+</body>
+</html>
