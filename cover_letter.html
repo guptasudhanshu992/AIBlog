@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter Generator - Career Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Career Builder</div>
+        <nav>
+            <ul>
+                <li><a href="/" data-link>Home</a></li>
+                <li><a href="/resume.html" data-link>Resume Builder</a></li>
+                <li><a href="/cover_letter.html" data-link>Cover Letter Generator</a></li>
+                <li><a href="/ats.html" data-link>ATS Score Calculator</a></li>
+                <li><a href="/profile.html" data-link>Profile</a></li>
+                <li><a href="/login.html" data-link>Login</a></li>
+                <li><a href="/signup.html" data-link>Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <h1>Cover Letter Generator</h1>
+        <form id="cover-letter-form">
+            <label for="job-description">Job Description:</label>
+            <textarea id="job-description" name="job-description" rows="10" required></textarea>
+            <label for="user-profile">Your Profile (skills, experience, etc.):</label>
+            <textarea id="user-profile" name="user-profile" rows="10" required></textarea>
+            <button type="submit">Generate Cover Letter</button>
+        </form>
+        <div id="cover-letter-output"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
